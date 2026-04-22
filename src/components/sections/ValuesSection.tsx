@@ -1,23 +1,24 @@
 import { useReveal } from '@/hooks/useReveal'
+import { pub } from '@/lib/utils'
 
 const values = [
   {
     name: 'Unity',
     description:
       'Every bond we form makes the whole stronger. Unity is not a word — it\'s what happens when we show up.',
-    image: '/images/ig/ig-11.jpg',
+    image: pub('/images/ig/ig-11.jpg'),
   },
   {
     name: 'Strength',
     description:
       'We come from resilience. We operate from strength — not anger, not fear. From knowing who we are.',
-    image: '/images/fb/fb-23.jpg',
+    image: pub('/images/fb/fb-23.jpg'),
   },
   {
     name: 'Community',
     description:
       'Community is daily work. It\'s the meal you share, the hand you extend, the presence you maintain.',
-    image: '/images/ig/ig-21.jpg',
+    image: pub('/images/ig/ig-21.jpg'),
   },
 ]
 

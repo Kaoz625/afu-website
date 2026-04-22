@@ -1,4 +1,5 @@
 import { useReveal } from '@/hooks/useReveal'
+import { pub } from '@/lib/utils'
 
 export default function AboutSection() {
   const imageRef = useReveal<HTMLDivElement>()
@@ -15,12 +16,12 @@ export default function AboutSection() {
             className="reveal-left relative"
           >
             <img
-              src="/images/ig/ig-05.jpg"
+              src={pub('/images/ig/ig-05.jpg')}
               alt="All For Uniting community"
               className="w-full h-96 lg:h-[500px] object-cover"
             />
             <img
-              src="/images/fb/fb-09.jpg"
+              src={pub('/images/fb/fb-09.jpg')}
               alt="AFU gathering"
               className="absolute bottom-[-24px] right-[-24px] w-48 h-48 md:w-56 md:h-56 object-cover border-4 border-afu-red shadow-2xl"
             />

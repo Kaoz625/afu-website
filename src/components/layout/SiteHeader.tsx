@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react'
 import { Menu, X } from 'lucide-react'
+import { pub } from '@/lib/utils'
 
 const navLinks = [
   { label: 'About', href: '#about' },
@@ -42,7 +43,7 @@ export default function SiteHeader() {
           {/* Logo */}
           <div className="flex items-center gap-3">
             <img
-              src="/images/logo/logo.jpg"
+              src={pub('/images/logo/logo.jpg')}
               alt="All For Uniting logo"
               className="h-10 w-10 rounded-full object-cover"
             />

@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react'
 import { ChevronLeft, ChevronRight, X } from 'lucide-react'
 import { useReveal } from '@/hooks/useReveal'
 import { galleryImages } from '@/data/galleryImages'
+import { pub } from '@/lib/utils'
 
 export default function GallerySection() {
   const gridRef = useReveal<HTMLDivElement>()
@@ -57,7 +58,7 @@ export default function GallerySection() {
               >
                 <img
                   loading="lazy"
-                  src={img.src}
+                  src={pub(img.src)}
                   alt={img.alt}
                   className="w-full h-auto object-cover group-hover:scale-105 transition-transform duration-500 group-hover:brightness-110"
                 />
@@ -95,7 +96,7 @@ export default function GallerySection() {
 
           {/* Image */}
           <img
-            src={galleryImages[selectedIndex].src}
+            src={pub(galleryImages[selectedIndex].src)}
             alt={galleryImages[selectedIndex].alt}
             className="max-h-[90vh] max-w-[90vw] object-contain"
             onClick={(e) => e.stopPropagation()}

@@ -1,4 +1,5 @@
 import { MapPin } from 'lucide-react'
+import { pub } from '@/lib/utils'
 import { useEvents } from '@/hooks/useEvents'
 import { useReveal } from '@/hooks/useReveal'
 import { formatEventDate } from '@/lib/utils'
@@ -14,7 +15,7 @@ function EventCard({ event }: { event: Event }) {
     >
       <div className="overflow-hidden">
         <img
-          src={event.image_url ?? '/images/fb/fb-01.jpg'}
+          src={pub(event.image_url ?? '/images/fb/fb-01.jpg')}
           alt={event.title}
           className="w-full h-56 object-cover group-hover:scale-105 transition-transform duration-700"
         />

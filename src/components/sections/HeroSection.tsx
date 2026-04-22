@@ -1,15 +1,16 @@
 import { useEffect, useState } from 'react'
 import { ChevronDown } from 'lucide-react'
+import { pub } from '@/lib/utils'
 
 const SLIDES: string[] = [
-  '/images/fb/fb-01.jpg',
-  '/images/fb/fb-05.jpg',
-  '/images/fb/fb-09.jpg',
-  '/images/fb/fb-15.jpg',
-  '/images/ig/ig-01.jpg',
-  '/images/ig/ig-05.jpg',
-  '/images/ig/ig-11.jpg',
-  '/images/ig/ig-21.jpg',
+  pub('/images/fb/fb-01.jpg'),
+  pub('/images/fb/fb-05.jpg'),
+  pub('/images/fb/fb-09.jpg'),
+  pub('/images/fb/fb-15.jpg'),
+  pub('/images/ig/ig-01.jpg'),
+  pub('/images/ig/ig-05.jpg'),
+  pub('/images/ig/ig-11.jpg'),
+  pub('/images/ig/ig-21.jpg'),
 ]
 
 const INTERVAL_MS = 6000
@@ -45,7 +46,7 @@ export default function HeroSection() {
       {/* Content */}
       <div className="relative z-10 text-center px-4">
         <img
-          src="/images/logo/logo.jpg"
+          src={pub('/images/logo/logo.jpg')}
           alt="All For Uniting logo"
           className="h-24 w-24 md:h-32 md:w-32 rounded-full object-cover mx-auto mb-6 border-2 border-afu-red shadow-2xl"
         />
