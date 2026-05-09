@@ -1,35 +1,37 @@
-# Replit Agent Task Spec
+# Replit Agent Task: afu-website
 
-## Instructions for Replit Agent
-You are building/improving this project. Read this file carefully before touching any code.
-Commit all changes with prefix "replit: " and push to main when done.
+## Goal
+Build a complete AFU Social Club website with About, Events, and Contact sections using a dark, modern aesthetic that reflects the club's community identity.
 
-## Stack Rules (non-negotiable)
-- Static → Cloudflare Pages (never Vercel)
-- DB → Supabase self-hosted Docker (never cloud Supabase)
-- Auth → NextAuth.js (free, not Auth0/Clerk)
-- AI → Claude Sonnet 4.6 via Anthropic API (model: claude-sonnet-4-6)
-- Payments (adult) → CCBill or Segpay only
+## Tasks
+1. Audit the existing src/ — identify what's built vs. what's placeholder, preserve any working components
+2. Design a dark-theme hero section: full-viewport, bold club name "AFU Social Club", tagline, and CTA button ("Join the Club" / "See Events")
+3. Build an About section: club mission/story, founding members or key figures, core values — write compelling placeholder copy with NYC community energy
+4. Build an Events section: card-based layout with upcoming events — each card shows event name, date, location, and a "RSVP" button; wire RSVP to a Supabase `rsvps` table or a simple Google Form link
+5. Build a Contact section: email, Instagram link, and a simple contact form (name, email, message) that submits to Supabase `contact_submissions` table
+6. Add a Members section or gallery: photo grid placeholder (use Unsplash NYC community photos as placeholders)
+7. Implement smooth scroll navigation between sections
+8. Add dark theme with modern design: deep blacks/charcoals, white text, single accent color (electric blue or burnt orange)
+9. Add Open Graph meta tags for social sharing
+10. Ensure full mobile responsiveness
+11. Deploy to Cloudflare Pages (static build from dist/)
+12. Set up `_headers` file with security headers
 
-## Improvements To Make
-1. **Audit current scaffold** — Read all files in src/ to understand what exists. Document in a comment at the top of App.tsx what was found vs what needs building.
-2. **Build About section** — Create a compelling About page/section for AFU Social Club. Include: club mission statement (create placeholder text: "AFU Social Club — A community built on authenticity, creativity, and real connection"), founding story (placeholder), core values (3-4 values with icons), and team/leadership section (placeholder names/roles).
-3. **Build Events section** — Create an Events page/section showing upcoming and past events. Use hardcoded placeholder events (3 upcoming, 3 past) in the format: event name, date, location, description, and a "RSVP" button. Style as modern event cards.
-4. **Build Contact section** — Create a contact form (name, email, subject, message) using Formspree free tier for form submissions. Add social media placeholder links. Add a map embed placeholder (Google Maps iframe or Mapbox static).
-5. **Modern design** — Use a dark, urban aesthetic with bold typography. Color palette: black (#0a0a0a) background, white text, gold accent (#D4AF37). Use a bold sans-serif font (Google Fonts: Space Grotesk or DM Sans). Add subtle animations (fade-in on scroll using Intersection Observer).
-6. **Move from cloud Supabase to self-hosted config** — Update supabase/ config to use environment variables for the Supabase URL/key. Add a `.env.example` file showing `VITE_SUPABASE_URL=http://localhost:54321` and `VITE_SUPABASE_ANON_KEY=your-key`. Remove any hardcoded cloud Supabase URLs.
-7. **Add navigation** — Build a responsive nav with: logo/wordmark "AFU", links to About/Events/Contact, and a hamburger menu on mobile. Sticky on scroll.
-8. **Add Cloudflare Pages deploy config** — Add `public/_headers` with security headers. Update README with: `npm run build` → deploy `dist/` to Cloudflare Pages. Remove any Vercel references.
-9. **Fix any TypeScript/lint errors** — Run `npm run build` and fix all errors.
+## Tech Stack
+- React 18 + TypeScript
+- Vite
+- Tailwind CSS
+- Supabase (RSVP and contact form storage)
+- Cloudflare Pages (static deploy)
 
-## Do Not Touch
-- supabase/ directory structure (update config values, don't restructure)
-- tailwind.config.ts color system base (you may extend it)
+## Deploy Target
+Cloudflare Pages — connect `Kaoz625/afu-website`. Build command: `npm run build`, output: `dist/`. Never Vercel.
 
-## Definition of Done
-- [ ] All improvements implemented and working
-- [ ] No TypeScript/lint errors (`npm run build` passes)
-- [ ] About, Events, and Contact sections all present
-- [ ] Contact form submits via Formspree
-- [ ] Mobile responsive (375px)
-- [ ] Pushed to main with "replit: " commit prefix
+## Done When
+- [ ] All four sections (Hero, About, Events, Contact) are built and populated
+- [ ] RSVP buttons on event cards are functional (Supabase or form link)
+- [ ] Contact form submits successfully
+- [ ] Dark theme is consistent across all sections
+- [ ] Site is fully mobile-responsive at 375px
+- [ ] Open Graph tags present
+- [ ] All changes pushed to `Kaoz625/afu-website` main branch
